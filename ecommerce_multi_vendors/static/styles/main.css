@@ -1,0 +1,30 @@
+/**
+*nav
+*/
+
+.navbar {
+    text-transform: uppercase;
+}
+
+    .navbar .is-dark {
+        background: #445;
+    }
+
+
+/**
+*footer
+*/
+    
+.footer a {
+    margin-bottom: 15px;
+    display: inline-block;
+    color: #445;
+}
+
+/**
+*bulma overrides
+*/
+
+.input, .button {
+    border-radius: 0;
+}
