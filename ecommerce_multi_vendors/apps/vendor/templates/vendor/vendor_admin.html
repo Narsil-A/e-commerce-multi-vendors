@@ -9,4 +9,32 @@
         <a href="{% url 'logout' %}" class="button is-danger is-uppercase">Log out</a>
     </div>
 
+    <div class="box">
+        <h2 class="is-size-3 mb-4">My products</h2>
+
+        {% if products %}
+            <table class="table is-fullwith">
+                <thead>
+                    <tr>
+                        <th>Title</h>
+                        <th>Title</h>
+                    </tr>   
+                </thead>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product.title }}</td>
+                        <td>{{ product.price }}</td>
+                    </tr>
+                {% endfor %}       
+
+                <tbody>
+
+                </tbody>    
+
+            </table>
+        {% else %} 
+            <p> You don't have any products yet...</p>
+        {% endif %}
+    </div>             
+
 {% endblock %}

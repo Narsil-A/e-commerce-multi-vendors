@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm #for the form creation 
 from django.shortcuts import render, redirect
 from .models import Vendor #import database
+from apps.product.models import Product #import db from the product app 
 
 def become_vendor(request):
     if request.method == 'POST': #check if the form has been submitted
@@ -21,10 +22,11 @@ def become_vendor(request):
     else:
         form = UserCreationForm()
          
-    return render(request,'vendor/become_vendor.html', {'form':form}) #to see in the templates
+    return render(request,'vendor/become_vendor.html', {'form': form}) #to see in the templates
 
 @login_required #check if the user is logged
 def vendor_admin(request):
     vendor = request.user.vendor
+    products = vendor.products.all()
     
-    return render(request, 'vendor/vendor_admin.html', {'vendor':vendor})
+    return render(request, 'vendor/vendor_admin.html', {'vendor': vendor, 'products':products})
