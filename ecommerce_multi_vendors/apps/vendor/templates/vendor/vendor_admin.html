@@ -24,7 +24,7 @@
                 </thead>
                 {% for product in products %}
                     <tr>
-                        <td>{{ product.title }}</td>
+                        <td><a href="{% url 'product' product.category.slug product.slug %}">{{ product.title }}</a></td>
                         <td>{{ product.price }}</td>
                     </tr>
                 {% endfor %}       
