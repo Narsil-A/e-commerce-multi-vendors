@@ -1,5 +1,5 @@
 /**
-*nav
+* nav
 */
 
 .navbar {
@@ -12,7 +12,7 @@
 
 
 /**
-*footer
+* footer
 */
     
 .footer a {
@@ -22,9 +22,21 @@
 }
 
 /**
-*bulma overrides
+* bulma overrides
 */
 
 .input, .button {
     border-radius: 0;
+}
+
+/**
+* Product list item 
+*/
+
+.product-list-item, .box .subtitle {
+    margin-bottom: 0;
+}
+
+.product-list-item, .box .price {
+    color: #888;
 }
